@@ -1,0 +1,173 @@
+/* --- style.css --- */
+
+:root {
+    --primary-brown: #5D4037; /* Földszín */
+    --secondary-brown: #8D6E63; 
+    --wheat-gold: #FFB300; /* Búza arany */
+    --traktor-green: #2e7d32; /* John Deere zöld jellegű */
+    --bg-color: #fcf6e8; /* Enyhe pergamen */
+    --text-dark: #212121;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    /* Ha van háttérkép, azt itt kezeli, de alapból legyen olvasható */
+}
+
+/* --- FEJLÉC --- */
+.main-header {
+    background: linear-gradient(90deg, var(--traktor-green) 0%, #1b5e20 100%);
+    color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border-bottom: 5px solid var(--wheat-gold);
+}
+
+.cimer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    padding: 5px;
+    border: 3px solid var(--wheat-gold);
+}
+
+.header-content {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.header-content h2 {
+    color: var(--wheat-gold);
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+.header-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* --- NAVIGÁCIÓ --- */
+.navbar {
+    background-color: var(--primary-brown);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    display: block;
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: var(--wheat-gold);
+    color: var(--primary-brown);
+}
+
+/* --- TARTALOM --- */
+.results-container {
+    max-width: 95%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* --- TÁBLÁZAT (A LÉNYEG) --- */
+/* Fix magasság a görgetéshez */
+#score-table-wrapper {
+    
+    overflow: hidden; /* A JS fogja görgetni */
+    position: relative;
+    border: 2px solid var(--secondary-brown);
+    max-height: 70vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.8rem; /* NAGY BETŰK A TV MIATT */
+}
+
+thead {
+    background-color: var(--primary-brown);
+    color: var(--white);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Név oszlop balra */
+td:nth-child(2) {
+    text-align: left;
+    font-weight: bold;
+    color: var(--traktor-green);
+}
+
+/* Legjobb pontszám kiemelése */
+td:nth-child(6) {
+    font-weight: bold;
+    color: #d32f2f;
+    background-color: #fffde7;
+    border-left: 2px solid #ccc;
+}
+
+/* Első helyezett sora */
+tbody tr:first-child {
+    background-color: #fff9c4; /* Aranyos háttér */
+    border: 3px solid gold;
+}
+
+/* Zebra csíkozás */
+tbody tr:nth-child(even) {
+    background-color: #f1f8e9;
+}
+
+/* --- LÁBLÉC --- */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #bbb;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
